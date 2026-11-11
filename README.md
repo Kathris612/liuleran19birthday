@@ -12,7 +12,7 @@
 
 ## 这一版的特别设计
 
-- **云朵肖像蛋糕顶饰**：用户提供的粉紫云朵图片被裁成拱形，嵌入手绘金色相框，立在蛋糕最上层
+- **戈仑石人肖像蛋糕顶饰**：取自《皇室战争》的戈仑石人卡面被裁成拱形，嵌入手绘金色相框，立在蛋糕最上层，并配紫色宝石光晕
 - **3D 翻转效果**：右下角「翻转」按钮让整个蛋糕连同相框完成一次 360° 翻转，翻到侧面时会扫过一层金色光晕
 - **轻微 3D 视差**：桌面端移动鼠标时，蛋糕与相框会随视角轻轻倾斜
 - 点击「许个愿 · 吹蜡烛」：烛火熄灭、轻烟升起、烟花与彩纸落下
@@ -34,14 +34,14 @@ python -m http.server 8089
 
 ```text
 liuleran19birthday/
-├─ index.html              页面结构 + 手绘 SVG 蛋糕 + 云朵相框
+├─ index.html              页面结构 + 手绘 SVG 蛋糕 + 戈仑石人相框
 ├─ 404.html                同风格 404 页面
 ├─ css/
 │  └─ style.css            视觉、翻转动画与响应式布局
 ├─ js/
 │  └─ main.js              星光、烟花、吹蜡烛、翻转、音乐与视差
 ├─ assets/
-│  ├─ cloud-portrait.png   蛋糕顶部的云朵肖像
+│  ├─ golem.png            蛋糕顶部的戈仑石人肖像
 │  ├─ favicon.svg
 │  └─ grain.svg
 ├─ og-image.png            1200 × 630 社交分享图
@@ -59,11 +59,13 @@ liuleran19birthday/
 - `404.html` 的标题与装饰数字
 - `README.md` 与 `robots.txt` / `sitemap.xml` 中的地址
 
-## 替换顶部的云朵图片
+## 替换顶部的戈仑石人图片
 
-1. 将新图片保存为 `assets/cloud-portrait.png`，建议使用正方形图片。
-2. 在 `index.html` 中搜索 `cloud-portrait.png`，图片会通过 `clip-path="url(#portraitClip)"` 自动裁成拱形。
+1. 将新图片保存为 `assets/golem.png`，建议使用竖向肖像图。
+2. 在 `index.html` 中搜索 `golem.png`，图片会通过 `clip-path="url(#portraitClip)"` 自动裁成拱形。
 3. 如需调整相框大小，修改 `portraitClip` 与相框 `path` 的坐标；其余蜡烛位置在 `transform="translate(290 327)"` 等四组烛台坐标中。
+
+> 戈仑石人卡面素材版权归 Supercell 所有，本页面仅作个人生日祝福用途。素材参考：<https://royaleapi.github.io/cr-api-assets/cards/golem.png>
 
 ## 调整翻转动画
 
